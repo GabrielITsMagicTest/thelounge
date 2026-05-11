@@ -1,9 +1,8 @@
 FROM ghcr.io/thelounge/thelounge
 
-COPY config.js /var/opt/thelounge/config.js
-
-WORKDIR /tmp
+COPY s.sh /s.sh
+RUN chmod +x /s.sh
 
 EXPOSE 9000
 
-CMD ["thelounge", "start"]
+CMD ["/s.sh"]
